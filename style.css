@@ -1,0 +1,30 @@
+.bgColorRed {
+    background-color: red;
+}
+
+.bgColorYellow {
+    background-color: #130b86ab;
+}
+
+.bigFont {
+    font-size: 34px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+}
+
+.colorGreen{
+    color:green;
+}
+h3{
+   background: yellow;
+    width: 200px;
+    height: 300px;
+    border: 20px solid red;
+    border-radius: 44px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+#colorpink {
+    color:pink;
+    background-color: aqua;
+}

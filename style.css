@@ -28,3 +28,34 @@ h3{
     color:pink;
     background-color: aqua;
 }
+
+/* @media screen for mobile */
+/* @media (max-width: 478px) {
+    body {
+        background-color: yellow;
+        font-size:40px;
+    }
+}
+
+/* @media screen for tablet */
+/* @media (min-width: 479px) {
+    body {
+        background-color: red;
+        font-size:14%;
+    }
+} */
+
+/* @media screen for desktop */
+/* @media (min-width: 821px) {
+    body {
+        color: green;
+        font-size:20%;
+        background-color: black;
+    }
+} */
+
+.col-sm-3{
+    background-color: yellow;
+    width:40%;
+    height: 90px;
+}

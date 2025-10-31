@@ -14,7 +14,7 @@
 .colorGreen{
     color:green;
 }
-h3{
+/* h3{
    background: yellow;
     width: 200px;
     height: 300px;
@@ -22,7 +22,7 @@ h3{
     border-radius: 44px;
     padding-top: 30px;
     padding-left: 20px;
-}
+} */
 
 #colorpink {
     color:pink;
@@ -58,4 +58,7 @@ h3{
     background-color: yellow;
     width:40%;
     height: 90px;
+}
+.error {
+    color: red;
 }

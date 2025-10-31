@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        // $('p').hide();
+        $('p').css('color', 'red');
+        $('.info').text('<h2>This is the updated text</h2>');
+        $('#more_info').html('<h2>This is also updated</h2>');
+
+    });
+</script>
+
+<body>
+    <h1>Welcome to my page</h1>
+    <p>P1 here</p>
+    <p class="info">P2 here</p>
+    <p>P3 here</p>
+    <p>P4 here</p>
+    <div class="info">More information</div>
+    <div id="more_info">This is to provide more information</div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="logic.js"></script>
+</head>
+
+<body>
+    <style>
+        input {
+            background-color: red;
+        }
+        .bgColorYellow {
+            background-color: red;
+        }
+    </style>
+    <h3>This is my form</h3>
+    <img src="https://cdn.pixabay.com/photo/2022/04/21/06/44/louvre-7146800_1280.jpg" alt="">
+    <form action="test.php" method="POST">
+        <label class="bigFont colorGreen bgColorYellow" for="">First Name</label>
+        <input class="bgColorRed" type="text" name="first_name">
+        <label for="" >Email</label>
+        <input type="email" name="email" placeholder="test@gmail.com">
+        <label for="">Age</label>
+        <input type="number" name="age">
+        Password: <input class="bgColorRed" type="password" name="password">
+        Phone Number: <input class="bgColorYellow" type="text" name="phone_number" placeholder="+1-999-999-9999">
+        Honda: <input type="radio" name="car" value="honda">
+        Tesla: <input type="radio" name="car" value="tesla">
+        <select name="cars">
+            <option value="">Please select a car</option>
+            <option value="honda">Honda</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Kia">Kia</option>
+            <option value="Audi">Audi</option>
+        </select>
+        <input type="button" value="Button">
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>

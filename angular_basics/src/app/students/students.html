@@ -1,0 +1,59 @@
+<h2>Students</h2>
+<h2 [style.color]="StyleRedColor">My name is {{name}}</h2>
+<h2 class="red">My name is {{name}}</h2>
+<h2 [class]="ClassRed">My name is {{name}}</h2>
+
+<h3 [ngClass]="{'red': hasErrors, 'green': NoErrors}">We will change the styling of this one</h3>
+
+<button (click)="toggleButton()">Change Style</button>
+
+<p appTest>This is an example of custom directive</p>
+
+<!-- Property Binding: -->
+
+<!-- <input type="text" [value]="name"  />
+  <input type="text" [(ngModel)]="name" #firstName />
+  <input type="text" [(ngModel)]="firstName" #fullName /> -->
+  HasError Value : {{ hasErrors }} <br/>
+  @if (name == "John") {
+    <p>Welcome John.</p> 
+  } @else if (name == "Alice") {
+    <p>Welcome Alice!</p>
+  }
+   @else {
+    <p>Welcome Everyone</p> 
+  }
+
+  @switch(name) {
+    @case("Alice") {
+      <p>Welcome Alice!</p>
+    }
+    @case("Bob") {
+      <p>Welcome Bob!</p>
+    }
+    @default {
+      <p>Welcome Guest!</p>
+    }
+  }
+
+  @for (user of users; track users.keys()) {
+    <p>User: {{ user }}</p> 
+  } @empty {
+    <p>No users found.</p>
+  }
+
+  
+    <ul>
+        @for (student of students; track student.id) {
+        <li>{{ student.name }}</li>
+        <button (click)="eventVal=student.name">Update Student</button>
+        <button (click)="showStudentDetails(student.name)">Delete Student</button>
+
+        } @empty {
+        <li>No items to display.</li>
+        }
+
+        <p>Total Students: {{ countStudents() }}</p>
+
+        
+    </ul>

@@ -1,0 +1,42 @@
+<form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" [(ngModel)]="username" #usernameInput="ngModel" minlength="4" required />
+    </div>
+    <div>
+        @if (usernameInput.errors?.['required'] && usernameInput.touched) {
+            <div class="error">Username is required.</div>
+        }
+        @if (usernameInput.errors?.['minlength'] && usernameInput.touched) {
+            <div class="error">Username must be at least 4 characters long.</div>
+        }
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" [(ngModel)]="email" #emailInput="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+        {{ emailInput.errors | json }}
+            <div>
+        @if (emailInput.errors?.['required'] && emailInput.touched) {
+            <div class="error">Email is required.</div>
+        }
+         @if (emailInput.errors?.['pattern'] && emailInput.touched) {
+            <div class="error">Email is invalid.</div>
+        }
+    </div>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" [(ngModel)]="password" #passwordInput="ngModel" minlength="8" maxlength="16" required/>
+        {{ passwordInput.errors | json }}
+            @if (passwordInput.errors?.['required'] && passwordInput.touched) {
+            <div class="error">Password is required.</div>
+        }
+        @if (passwordInput.errors?.['minlength'] && passwordInput.touched) {
+            <div class="error">Password must be at least 8 characters long.</div>
+        }
+        @if (passwordInput.errors?.['maxlength'] && passwordInput.touched) {
+            <div class="error">Password must be at most 16 characters long.</div>
+        }
+    </div>
+    <button type="submit">Sign Up</button>
+</form>

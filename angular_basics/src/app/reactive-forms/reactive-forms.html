@@ -25,5 +25,17 @@
     <label for="password">Password</label>
     <input id="password" name="password" type="password" formControlName="password" />
 
+    @if(signUpForm.get('password')?.touched && signUpForm.get('password')?.errors?.['required']) {
+        <div>
+            Password is required.
+        </div>
+    }
+
+     @if(signUpForm.get('password')?.touched && signUpForm.get('password')?.errors?.['weakPassword']) {
+        <div>
+            Password is weak. Please choose a stronger password.
+        </div>
+    }
+
     <button type="submit">Submit</button>
 </form>

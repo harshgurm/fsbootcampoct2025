@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
+import { customerPasswordValidation } from '../validators/customer-password-validation';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -12,7 +13,7 @@ export class ReactiveForms {
   signUpForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8), customerPasswordValidation]),
   });
 
   onSubmit(form: FormGroup) {

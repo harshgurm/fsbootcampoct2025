@@ -3,6 +3,7 @@ import { StudentsService } from '../services/students-service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Test } from '../test';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -21,6 +22,8 @@ export class Students {
 
   students:{name: string, age: number, id:number}[] = [];
 
+  studentId = 0
+
   firstName = '';
 
   eventVal = ''
@@ -34,7 +37,11 @@ export class Students {
 
   StyleRedColor = 'red';
 
-  constructor(private studentsService: StudentsService) {
+  constructor(private studentsService: StudentsService, private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(params => {
+      // this.firstName = params['firstName'] || 'Guest';
+      this.studentId = Number(params.get('id')) || 0;
+    });
     this.students = this.studentsService.getStudents();
   }
     

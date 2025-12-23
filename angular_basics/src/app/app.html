@@ -4,12 +4,20 @@
 
 <!-- <app-sign-up></app-sign-up> -->
 
-<!-- @for(item of persons; track item.id) {
-    <div>
-        <h3>{{ item.name }}</h3>
-    </div>
-} -->
-
-<app-reactive-forms></app-reactive-forms>
+<!-- <app-reactive-forms></app-reactive-forms> -->
+ <div>
+    <nav>
+        <a routerLink="/sign-up" routerLinkActive="active">Sign Up</a> |
+        <a routerLink="/login" routerLinkActive="active">Reactive Forms</a>
+    </nav>
+ </div>
+<ul>
+@for(person of persons; track person.id) {
+    <!-- <li><a routerLink="/student/{{person.id}}" routerLinkActive="active">{{person.name}}</a></li> -->
+     <!-- another were of writing the same line above -->
+    <li><a [routerLink]="['/student', person.id]" routerLinkActive="active">{{person.name}}</a></li>
+ }
+</ul>
+ 
 
 <router-outlet />

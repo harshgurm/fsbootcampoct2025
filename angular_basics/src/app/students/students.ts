@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { StudentsService } from '../services/students-service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -13,6 +13,14 @@ import {ActivatedRoute} from '@angular/router';
   styleUrl: './students.css',
 })
 export class Students {
+
+  @Input() title = '';
+  @Input() personValFromParent:{name: string, age: number} = { name: '', age: 0 };
+  @Output() student = new EventEmitter<string>();
+
+  sendData(){
+    this.student.emit('Harsh');
+  }
 
   users = ["John", "Jane", "Doe", "Smith"];
 
